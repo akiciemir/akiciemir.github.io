@@ -1,12 +1,12 @@
-<!-- akiciemir.github.io — tek sayfa portfolyo -->
+<!-- akiciemir.github.io -->
 
 <!DOCTYPE html>
 <html lang="tr" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>akiciemir — PHP, web ve Windows</title>
-<meta name="description" content="akiciemir: XAMPP üzerinde PHP, web arayüzleri ve Windows shell dotfile'ları.">
+<title>akiciemir</title>
+<meta name="description" content="PHP, web arayüzü ve Windows kabuğu.">
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" id="meta-theme" content="#0b0d10">
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
@@ -16,19 +16,11 @@
 <body>
 <a class="skip" href="#main" data-i18n="a11y.skip">İçeriğe geç</a>
 
-<header class="topbar">
-  <a class="brand" href="#top">
-    <img class="brand__mark" src="assets/img/logo.svg" alt="" width="32" height="32">
-    <span class="brand__name">akiciemir</span>
+<header class="top">
+  <a class="mark" href="#top">
+    <img src="assets/img/logo.svg" alt="" width="28" height="28">
+    <span>akiciemir</span>
   </a>
-
-  <nav class="nav" aria-label="Bölümler">
-    <a href="#stack" data-i18n="nav.stack">Yığın</a>
-    <a href="#work" data-i18n="nav.work">İşler</a>
-    <a href="#dotfiles" data-i18n="nav.dotfiles">Dotfiles</a>
-    <a href="#contact" data-i18n="nav.contact">İletişim</a>
-  </nav>
-
   <div class="tools">
     <button id="lang-toggle" class="btn btn--ghost" type="button" aria-label="Language / Dil">
       <span data-lang-label>EN</span>
@@ -42,169 +34,61 @@
 
 <main id="main">
   <section class="hero" id="top">
-    <p class="eyebrow reveal" data-i18n="hero.eyebrow">akiciemir / fullstack</p>
-
-    <h1 class="hero__title">
-      <span class="line reveal" data-i18n="hero.l1">Sunucudan shell'e</span>
-      <span class="line reveal" data-i18n="hero.l2">kadar uçtan uca.</span>
-    </h1>
-
-    <p class="lead reveal" data-i18n="hero.lead">PHP'i XAMPP üzerinde, arayüzü HTML/CSS ile, kabuğu PowerShell ile kuruyorum. İşin çalışma mantığını severim; katmanı gereksiz yere çoğaltmam.</p>
-
-    <div class="hero__actions reveal">
-      <a class="btn btn--primary" href="#work" data-i18n="hero.cta">İşlere bak</a>
-      <a class="btn btn--ghost" href="https://github.com/akiciemir" rel="noopener noreferrer" target="_blank">github.com/akiciemir</a>
-    </div>
-
-    <div class="term reveal" role="img" data-i18n-aria="term.aria" aria-label="PowerShell oturumu: kullanıcı adı, birincil yığın ve Laravel sorgusunun karşılığı">
-      <div class="term__bar">
-        <span class="dot dot--r" aria-hidden="true"></span>
-        <span class="dot dot--y" aria-hidden="true"></span>
-        <span class="dot dot--g" aria-hidden="true"></span>
-        <span class="term__title">powershell.exe</span>
-      </div>
-      <pre class="term__body"><code id="term-out"></code><span class="caret" aria-hidden="true"></span></pre>
-    </div>
-  </section>
-
-  <section class="section" id="stack">
-    <header class="section__head">
-      <span class="section__num">01</span>
-      <h2 data-i18n="stack.title">Yığın</h2>
-      <p class="section__sub" data-i18n="stack.sub">Günlük olarak dokunduğum katmanlar, en çok kullanılandan az'a.</p>
-    </header>
-
-    <ul class="stack">
-      <li class="stack__item reveal">
-        <h3 class="stack__title"><span class="stack__key">PHP</span><span data-i18n="stack.php.t"></span></h3>
-        <p data-i18n="stack.php.d"></p>
-        <ul class="tags"><li>XAMPP</li><li>Apache</li><li>MariaDB</li><li>phpMyAdmin</li></ul>
-      </li>
-      <li class="stack__item reveal">
-        <h3 class="stack__title"><span class="stack__key">WEB</span><span data-i18n="stack.web.t"></span></h3>
-        <p data-i18n="stack.web.d"></p>
-        <ul class="tags"><li>HTML5</li><li>CSS</li><li>JavaScript</li><li>anime.js</li></ul>
-      </li>
-      <li class="stack__item reveal">
-        <h3 class="stack__title"><span class="stack__key">VERİ</span><span data-i18n="stack.data.t"></span></h3>
-        <p data-i18n="stack.data.d"></p>
-        <ul class="tags"><li>MySQL</li><li>MariaDB</li><li>SQL</li><li>REST</li></ul>
-      </li>
-      <li class="stack__item reveal">
-        <h3 class="stack__title"><span class="stack__key">WINDOWS</span><span data-i18n="stack.win.t"></span></h3>
-        <p data-i18n="stack.win.d"></p>
-        <ul class="tags"><li>PowerShell</li><li>CMD</li><li>doskey</li><li>PSReadLine</li></ul>
-      </li>
-      <li class="stack__item reveal">
-        <h3 class="stack__title"><span class="stack__key">TASARIM</span><span data-i18n="stack.design.t"></span></h3>
-        <p data-i18n="stack.design.d"></p>
-        <ul class="tags"><li>Tipografi</li><li>Grid</li><li>Renk sistemi</li><li>Spacing</li></ul>
-      </li>
-    </ul>
-  </section>
-
-  <section class="section" id="work">
-    <header class="section__head">
-      <span class="section__num">02</span>
-      <h2 data-i18n="work.title">İşler</h2>
-      <p class="section__sub" data-i18n="work.sub">Kendi ihtiyacım için yazdığım, sonra paylaştığım şeyler.</p>
-    </header>
-
-    <ul class="work">
-      <li class="work__item reveal">
-        <h3 class="work__name">AFC Assistant</h3>
-        <p data-i18n="work.afc.d"></p>
-        <ul class="tags"><li>PowerShell</li><li>Windows</li><li>Skill</li></ul>
-      </li>
-      <li class="work__item reveal">
-        <h3 class="work__name">opencode-tg</h3>
-        <p data-i18n="work.tg.d"></p>
-        <ul class="tags"><li>Node.js</li><li>Bot API</li><li>SSE</li></ul>
-      </li>
-      <li class="work__item reveal">
-        <h3 class="work__name">terminal-banner</h3>
-        <p data-i18n="work.dotfiles.d"></p>
-        <ul class="tags"><li>PowerShell</li><li>CMD</li><li>fastfetch</li></ul>
-      </li>
-      <li class="work__item reveal">
-        <h3 class="work__name">Team Weak</h3>
-        <p data-i18n="work.weak.d"></p>
-        <ul class="tags"><li>Gönüllü</li><li>Topluluk</li></ul>
-      </li>
-    </ul>
-  </section>
-
-  <section class="section" id="dotfiles">
-    <header class="section__head">
-      <span class="section__num">03</span>
-      <h2 data-i18n="dots.title">Dotfiles</h2>
-      <p class="section__sub" data-i18n="dots.sub">Kabuktan girdiğim ilk şeyler. Hepsi sürümlü, hepsi taşınabilir.</p>
-    </header>
-
-    <ul class="tree">
-      <li class="reveal">
-        <code class="tree__path">%USERPROFILE%\bin\xien-banner.cmd</code>
-        <span class="tree__desc" data-i18n="dots.banner"></span>
-      </li>
-      <li class="reveal">
-        <code class="tree__path">%USERPROFILE%\bin\xien.doskey</code>
-        <span class="tree__desc" data-i18n="dots.doskey"></span>
-      </li>
-      <li class="reveal">
-        <code class="tree__path">Documents\WindowsPowerShell\profile.ps1</code>
-        <span class="tree__desc" data-i18n="dots.ps1"></span>
-      </li>
-      <li class="reveal">
-        <code class="tree__path">.config\fastfetch\config.jsonc</code>
-        <span class="tree__desc" data-i18n="dots.fastfetch"></span>
-      </li>
-      <li class="reveal">
-        <code class="tree__path">.config\opencode\</code>
-        <span class="tree__desc" data-i18n="dots.opencode"></span>
-      </li>
-    </ul>
-  </section>
-
-  <section class="section" id="contact">
-    <header class="section__head">
-      <span class="section__num">04</span>
-      <h2 data-i18n="contact.title">İletişim</h2>
-      <p class="section__sub" data-i18n="contact.sub">Kod, öneri ya da bir şeyi birlikte yapalım.</p>
-    </header>
-
+    <h1 class="hero__name">akiciemir</h1>
+    <p class="hero__line" data-i18n="hero.line">PHP yazıyorum, arayüz kuruyorum, Windows'ta otomasyon yapıyorum.</p>
     <ul class="links">
-      <li class="reveal" data-hide-empty>
-        <a class="links__item" data-mailto>
-          <span class="links__label" data-i18n="contact.mail.label">E-posta</span>
-          <span class="links__value" data-i18n="contact.mail.value"></span>
-        </a>
-      </li>
-      <li class="reveal">
-        <div class="links__item links__item--static">
-          <span class="links__label" data-i18n="contact.wp.label">WP</span>
-          <span class="links__value" data-i18n="contact.wp.value">@emxr</span>
-        </div>
-      </li>
-      <li class="reveal">
-        <a class="links__item" href="https://instagram.com/3emxr" target="_blank" rel="noopener noreferrer">
-          <span class="links__label" data-i18n="contact.ig.label">Instagram</span>
-          <span class="links__value" data-i18n="contact.ig.value">@3emxr</span>
-        </a>
-      </li>
-      <li class="reveal">
-        <a class="links__item" href="https://github.com/akiciemir" target="_blank" rel="noopener noreferrer">
-          <span class="links__label">GitHub</span>
-          <span class="links__value">github.com/akiciemir</span>
-        </a>
-      </li>
+      <li><a data-mailto><span data-i18n="contact.mail">E-posta</span></a></li>
+      <li><a href="https://instagram.com/3emxr" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      <li><a data-wp-link>WP</a></li>
+      <li><a href="https://github.com/akiciemir" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2 data-i18n="stack.title">Yığın</h2>
+    <dl class="rows">
+      <div class="row reveal">
+        <dt data-i18n="stack.php.k">PHP</dt>
+        <dd data-i18n="stack.php.v"></dd>
+      </div>
+      <div class="row reveal">
+        <dt data-i18n="stack.web.k">Web</dt>
+        <dd data-i18n="stack.web.v"></dd>
+      </div>
+      <div class="row reveal">
+        <dt data-i18n="stack.db.k">Veri</dt>
+        <dd data-i18n="stack.db.v"></dd>
+      </div>
+      <div class="row reveal">
+        <dt data-i18n="stack.win.k">Windows</dt>
+        <dd data-i18n="stack.win.v"></dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="block">
+    <h2 data-i18n="work.title">İşler</h2>
+    <ul class="rows">
+      <li class="row reveal"><span class="row__k">AFC Assistant</span><span class="row__v" data-i18n="work.afc"></span></li>
+      <li class="row reveal"><span class="row__k">opencode-tg</span><span class="row__v" data-i18n="work.tg"></span></li>
+      <li class="row reveal"><span class="row__k">terminal-banner</span><span class="row__v" data-i18n="work.banner"></span></li>
+      <li class="row reveal"><span class="row__k">Team Weak</span><span class="row__v" data-i18n="work.weak"></span></li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>Dotfiles</h2>
+    <ul class="paths reveal">
+      <li><code>~/bin/xien-banner.cmd</code></li>
+      <li><code>~/bin/xien.doskey</code></li>
+      <li><code>~/Documents/PowerShell/profile.ps1</code></li>
+      <li><code>~/.config/fastfetch/config.jsonc</code></li>
+      <li><code>~/.config/opencode/</code></li>
     </ul>
   </section>
 </main>
 
-<footer class="foot">
-  <p data-i18n="foot.note">Elle yazıldı. Framework yok, şablon yok.</p>
-  <p class="foot__dim">akiciemir.github.io</p>
-</footer>
+<footer class="foot"><span>akici.is-a.dev</span></footer>
 
 <script type="module" src="assets/js/main.js"></script>
 </body>
