@@ -60,6 +60,12 @@ export const dict = {
 
     "contact.title": "İletişim",
     "contact.sub": "Kod, öneri ya da birlikte yapılacak bir şey.",
+    "contact.mail.label": "E-posta",
+    "contact.mail.value": "", // TODO: mail adresini buraya yaz
+    "contact.wp.label": "WP",
+    "contact.wp.value": "@emxr",
+    "contact.ig.label": "Instagram",
+    "contact.ig.value": "@3emxr",
 
     "foot.note": "Elle yazıldı. Framework yok, şablon yok.",
 
@@ -128,6 +134,12 @@ export const dict = {
 
     "contact.title": "Contact",
     "contact.sub": "Code, an idea, or something to build together.",
+    "contact.mail.label": "E-mail",
+    "contact.mail.value": "", // TODO: put the mail address here
+    "contact.wp.label": "WP",
+    "contact.wp.value": "@emxr",
+    "contact.ig.label": "Instagram",
+    "contact.ig.value": "@3emxr",
 
     "foot.note": "Hand written. No framework, no template.",
 

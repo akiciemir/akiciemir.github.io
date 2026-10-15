@@ -57,6 +57,12 @@ function applyLang(lang) {
   const label = document.querySelector("[data-lang-label]");
   if (label) label.textContent = lang === "tr" ? "EN" : "TR";
 
+  // değeri boş olan satırı gizle (ör. henüz yazılmamış e-posta)
+  document.querySelectorAll("[data-hide-empty]").forEach((row) => {
+    const val = row.querySelector('[data-i18n$=".value"]');
+    row.hidden = !val || !val.textContent.trim();
+  });
+
   store.set(LANG_KEY, lang);
   return lang;
 }

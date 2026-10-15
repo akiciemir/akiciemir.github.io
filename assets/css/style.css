@@ -280,8 +280,27 @@ code, pre { font-family: var(--mono); }
   transition: padding-left 0.2s ease, color 0.2s ease;
 }
 .links__item:hover { padding-left: var(--s4); color: var(--accent); }
+.links__item--static { cursor: default; }
+.links__item--static:hover { padding-left: var(--s2); color: inherit; }
 .links__label { font-weight: 600; }
 .links__value { color: var(--muted); font: var(--t14)/1 var(--mono); }
+
+/* --- 404 --- */
+.nf {
+  min-height: 100vh;
+  max-width: var(--wrap); margin: 0 auto;
+  padding: var(--s12) var(--s6);
+  display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+}
+.nf__code { font: 700 var(--t48)/1 var(--mono); color: var(--accent); letter-spacing: -0.03em; }
+.nf__title {
+  margin-top: var(--s4); font-size: var(--t24);
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s3);
+}
+.nf__alt { font: 400 var(--t20)/1.2 var(--sans); color: var(--muted); }
+.nf__text { margin-top: var(--s3); max-width: var(--prose); color: var(--muted); }
+.nf .btn { margin-top: var(--s8); }
+.nf__sep { margin: 0 var(--s1); opacity: 0.5; }
 
 /* --- footer --- */
 .foot {
