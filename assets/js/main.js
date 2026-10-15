@@ -63,6 +63,11 @@ function applyLang(lang) {
     row.hidden = !val || !val.textContent.trim();
   });
 
+  // mailto: adresi tek kaynaktan (sözlük) al
+  const mail = document.querySelector("[data-mailto]");
+  const mailVal = mail?.querySelector('[data-i18n$=".value"]')?.textContent.trim();
+  if (mail && mailVal) mail.setAttribute("href", `mailto:${mailVal}`);
+
   store.set(LANG_KEY, lang);
   return lang;
 }
