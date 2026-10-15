@@ -1,6 +1,4 @@
-/* ============================================================
-   akiciemir.github.io — tek dosya tema, 4px spacing grid
-   ============================================================ */
+/* akiciemir.github.io — tema, yerleşim, tipografi */
 
 :root {
   /* spacing — 4px katı */
@@ -97,10 +95,7 @@ code, pre { font-family: var(--mono); }
 
 .brand { display: flex; align-items: center; gap: var(--s2); margin-right: auto; }
 .brand__mark {
-  display: grid; place-items: center;
-  width: 32px; height: 32px; border-radius: var(--r-sm);
-  background: var(--accent); color: var(--on-accent);
-  font: 700 var(--t14)/1 var(--mono);
+  display: block; width: 32px; height: 32px; border-radius: var(--r-sm);
 }
 .brand__name { font: 600 var(--t16)/1 var(--mono); letter-spacing: -0.01em; }
 

@@ -1,3 +1,5 @@
+<!-- akiciemir.github.io — tek sayfa portfolyo -->
+
 <!DOCTYPE html>
 <html lang="tr" data-theme="dark">
 <head>
@@ -7,27 +9,16 @@
 <meta name="description" content="akiciemir: XAMPP üzerinde PHP, web arayüzleri ve Windows shell dotfile'ları.">
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" id="meta-theme" content="#0b0d10">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b0d10'/%3E%3Ctext x='7' y='23' font-family='monospace' font-size='18' fill='%237dd3a0'%3E%26;gt;_%3C/text%3E%3C/svg%3E">
-<link rel="preload" href="assets/css/style.css" as="style">
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/style.css">
-<script>
-  /* ilk boya öncesi tema + dil (flash olmasın) */
-  (function () {
-    var t = null, l = null;
-    try { t = localStorage.getItem("akici-theme"); l = localStorage.getItem("akici-lang"); } catch (e) {}
-    if (!t) t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-    document.documentElement.dataset.theme = t;
-    document.getElementById("meta-theme").content = t === "light" ? "#fafbfc" : "#0b0d10";
-    if (l) document.documentElement.lang = l;
-  })();
-</script>
+<script src="assets/js/theme-boot.js"></script>
 </head>
 <body>
 <a class="skip" href="#main" data-i18n="a11y.skip">İçeriğe geç</a>
 
 <header class="topbar">
   <a class="brand" href="#top">
-    <span class="brand__mark" aria-hidden="true">&gt;_</span>
+    <img class="brand__mark" src="assets/img/logo.svg" alt="" width="32" height="32">
     <span class="brand__name">akiciemir</span>
   </a>
 

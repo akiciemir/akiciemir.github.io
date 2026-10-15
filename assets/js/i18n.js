@@ -1,4 +1,4 @@
-/* i18n — TR (varsayılan) / EN */
+// i18n.js — TR/EN sözlük ve anahtar arama
 
 export const dict = {
   tr: {

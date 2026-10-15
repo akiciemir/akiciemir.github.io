@@ -1,4 +1,4 @@
-/* main — tema, dil, terminal, animasyon */
+// main.js — tema, dil, terminal, animasyon
 
 import { dict, lookup } from "./i18n.js";
 
