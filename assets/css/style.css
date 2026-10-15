@@ -1,0 +1,311 @@
+/* ============================================================
+   akiciemir.github.io — tek dosya tema, 4px spacing grid
+   ============================================================ */
+
+:root {
+  /* spacing — 4px katı */
+  --s1: 4px;   --s2: 8px;   --s3: 12px;  --s4: 16px;
+  --s6: 24px;  --s8: 32px;  --s12: 48px; --s16: 64px;
+
+  /* tipografi — 12 / 14 / 16 / 20 / 24 / 32 / 48 */
+  --t12: 0.75rem;  --t14: 0.875rem; --t16: 1rem;
+  --t20: 1.25rem;  --t24: 1.5rem;  --t32: 2rem;   --t48: 3rem;
+
+  /* yarıçap */
+  --r-sm: 6px; --r-md: 10px; --r-lg: 16px; --r-pill: 999px;
+
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --mono: ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+
+  --wrap: 1088px;
+  --prose: 62ch;
+}
+
+/* --- koyu (varsayılan) --- */
+:root, [data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0b0d10;
+  --surface: #12151a;
+  --line: #242a32;
+  --text: #e9ecf1;
+  --muted: #9aa4b2;
+  --accent: #7dd3a0;
+  --on-accent: #06110b;
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.03), 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* --- açık --- */
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #fafbfc;
+  --surface: #ffffff;
+  --line: #e2e6ea;
+  --text: #12161c;
+  --muted: #576271;
+  --accent: #0f7a52;
+  --on-accent: #ffffff;
+  --shadow: 0 1px 0 rgba(0, 0, 0, 0.03), 0 16px 40px rgba(16, 24, 40, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 var(--t16)/1.65 var(--sans);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+h1, h2, h3 { line-height: 1.2; margin: 0; letter-spacing: -0.02em; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+a { color: inherit; text-decoration: none; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+}
+
+code, pre { font-family: var(--mono); }
+
+.skip {
+  position: absolute; left: var(--s4); top: -64px; z-index: 20;
+  padding: var(--s3) var(--s4); border-radius: var(--r-md);
+  background: var(--accent); color: var(--on-accent); font-weight: 600;
+  transition: top 0.2s ease;
+}
+.skip:focus { top: var(--s4); }
+
+/* ============================================================
+   üst bar
+   ============================================================ */
+.topbar {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; gap: var(--s4);
+  flex-wrap: wrap;
+  padding: var(--s3) var(--s6);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand { display: flex; align-items: center; gap: var(--s2); margin-right: auto; }
+.brand__mark {
+  display: grid; place-items: center;
+  width: 32px; height: 32px; border-radius: var(--r-sm);
+  background: var(--accent); color: var(--on-accent);
+  font: 700 var(--t14)/1 var(--mono);
+}
+.brand__name { font: 600 var(--t16)/1 var(--mono); letter-spacing: -0.01em; }
+
+.nav { display: flex; gap: var(--s1); flex-wrap: wrap; }
+.nav a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  padding: 0 var(--s3);
+  border-radius: var(--r-md);
+  color: var(--muted); font-size: var(--t14);
+  transition: color 0.18s ease, background-color 0.18s ease;
+}
+.nav a:hover { color: var(--text); background: var(--surface); }
+
+.tools { display: flex; align-items: center; gap: var(--s2); }
+
+/* ============================================================
+   butonlar
+   ============================================================ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--s2);
+  min-height: 44px; padding: 0 var(--s4);
+  border: 1px solid transparent; border-radius: var(--r-md);
+  font: 500 var(--t14)/1 var(--sans);
+  cursor: pointer;
+  transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+.btn--primary { background: var(--accent); color: var(--on-accent); font-weight: 600; }
+.btn--primary:hover { transform: translateY(-1px); }
+.btn--ghost { background: transparent; color: var(--text); border-color: var(--line); }
+.btn--ghost:hover { background: var(--surface); border-color: var(--muted); }
+.btn--icon { width: 44px; padding: 0; background: transparent; color: var(--text); border-color: var(--line); }
+.btn--icon:hover { background: var(--surface); border-color: var(--muted); }
+
+[data-theme="dark"] .i-sun { display: none; }
+[data-theme="light"] .i-moon { display: none; }
+
+/* ============================================================
+   hero — bölünmüş düzen
+   ============================================================ */
+.hero {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: var(--s12) var(--s6) var(--s16);
+  display: grid; gap: var(--s8);
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (min-width: 1024px) {
+  .hero { grid-template-columns: 1.05fr 0.95fr; align-items: center; gap: var(--s12); }
+}
+
+.eyebrow {
+  font: 500 var(--t14)/1 var(--mono);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: var(--s4);
+}
+
+.hero__title { font-size: var(--t48); font-weight: 700; max-width: 18ch; }
+.hero__title .line { display: block; }
+
+.lead {
+  margin-top: var(--s6);
+  max-width: var(--prose);
+  color: var(--muted);
+  font-size: var(--t20);
+  line-height: 1.6;
+}
+
+.hero__actions { display: flex; flex-wrap: wrap; gap: var(--s3); margin-top: var(--s8); }
+
+/* --- terminal --- */
+.term {
+  border: 1px solid var(--line); border-radius: var(--r-lg);
+  background: var(--surface); box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.term__bar {
+  display: flex; align-items: center; gap: var(--s2);
+  padding: var(--s3) var(--s4);
+  border-bottom: 1px solid var(--line);
+}
+.dot { width: 10px; height: 10px; border-radius: var(--r-pill); }
+.dot--r { background: #e06c5f; } .dot--y { background: #e0b155; } .dot--g { background: #74b96f; }
+.term__title { margin-left: var(--s2); color: var(--muted); font: var(--t12)/1 var(--mono); }
+.term__body {
+  margin: 0; padding: var(--s4);
+  font: var(--t14)/1.7 var(--mono);
+  color: var(--text);
+  white-space: pre-wrap; word-break: break-word;
+  min-height: 184px;
+}
+.term__body .p { color: var(--accent); }
+.term__body .c { color: var(--muted); }
+.caret {
+  display: inline-block; width: 8px; height: 1em;
+  background: var(--accent); vertical-align: text-bottom;
+  animation: blink 1.1s steps(2, start) infinite;
+}
+@keyframes blink { to { visibility: hidden; } }
+
+/* ============================================================
+   bölümler
+   ============================================================ */
+.section {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 var(--s6) var(--s16);
+  scroll-margin-top: 96px;
+}
+.section__head { margin-bottom: var(--s8); }
+.section__num {
+  display: block; margin-bottom: var(--s2);
+  font: 500 var(--t14)/1 var(--mono); color: var(--accent);
+}
+.section h2 { font-size: var(--t32); }
+.section__sub {
+  margin-top: var(--s3); max-width: var(--prose); color: var(--muted);
+}
+
+/* --- yığın --- */
+.stack {
+  display: grid; gap: var(--s4);
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (min-width: 768px) { .stack { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.stack__item {
+  padding: var(--s6);
+  border: 1px solid var(--line); border-radius: var(--r-lg);
+  background: var(--surface);
+}
+.stack__title { display: flex; align-items: baseline; gap: var(--s3); font-size: var(--t20); }
+.stack__key {
+  font: 500 var(--t12)/1 var(--mono); letter-spacing: 0.08em;
+  color: var(--accent); border: 1px solid var(--line);
+  padding: var(--s1) var(--s2); border-radius: var(--r-sm);
+}
+.stack__item p { margin-top: var(--s3); color: var(--muted); }
+
+.tags { display: flex; flex-wrap: wrap; gap: var(--s2); margin-top: var(--s4); }
+.tags li {
+  padding: var(--s1) var(--s3); border: 1px solid var(--line); border-radius: var(--r-pill);
+  color: var(--muted); font: var(--t12)/1.7 var(--mono);
+}
+
+/* --- işler --- */
+.work { border-top: 1px solid var(--line); }
+.work__item {
+  display: grid; gap: var(--s2) var(--s6);
+  grid-template-columns: minmax(0, 1fr);
+  padding: var(--s6) 0;
+  border-bottom: 1px solid var(--line);
+}
+@media (min-width: 768px) {
+  .work__item { grid-template-columns: 220px minmax(0, 1fr); align-items: start; }
+  .work__item .tags { grid-column: 2; }
+}
+.work__name { font-size: var(--t20); }
+.work__item p { color: var(--muted); max-width: var(--prose); }
+
+/* --- dotfiles --- */
+.tree { border-left: 2px solid var(--line); }
+.tree li {
+  display: grid; gap: var(--s1) var(--s6);
+  grid-template-columns: minmax(0, 1fr);
+  padding: var(--s3) 0 var(--s3) var(--s6);
+}
+@media (min-width: 768px) {
+  .tree li { grid-template-columns: 340px minmax(0, 1fr); }
+}
+.tree__path {
+  color: var(--text); font: var(--t14)/1.6 var(--mono);
+  overflow-wrap: anywhere;
+}
+.tree__desc { color: var(--muted); }
+
+/* --- iletişim --- */
+.links li { border-top: 1px solid var(--line); }
+.links li:last-child { border-bottom: 1px solid var(--line); }
+.links__item {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s4);
+  flex-wrap: wrap; min-height: 64px; padding: var(--s4) var(--s2);
+  transition: padding-left 0.2s ease, color 0.2s ease;
+}
+.links__item:hover { padding-left: var(--s4); color: var(--accent); }
+.links__label { font-weight: 600; }
+.links__value { color: var(--muted); font: var(--t14)/1 var(--mono); }
+
+/* --- footer --- */
+.foot {
+  max-width: var(--wrap); margin: 0 auto;
+  padding: var(--s6) var(--s6) var(--s12);
+  border-top: 1px solid var(--line);
+  color: var(--muted); font-size: var(--t14);
+  display: flex; flex-wrap: wrap; gap: var(--s2) var(--s6); justify-content: space-between;
+}
+.foot__dim { font-family: var(--mono); }
+
+/* ============================================================
+   animasyon başlangıç durumu (sadece JS açıkken)
+   ============================================================ */
+.js .reveal { opacity: 0; transform: translateY(16px); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; }
+  .caret { animation: none; }
+  * { transition-duration: 0.01ms !important; }
+}
