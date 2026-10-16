@@ -77,6 +77,40 @@ body {
 .nf h1 { margin: 0; font-size: var(--t32); font-weight: 700; }
 .nf p { margin: 0; color: var(--muted); font: var(--t14)/1 var(--mono); }
 
+/* belge sayfalari (privacy / terms) */
+.doc {
+  max-width: 720px; margin: 0 auto;
+  padding: 0 var(--s6) var(--s48);
+}
+.doc h1 {
+  margin: var(--s6) 0 var(--s2);
+  font-size: var(--t32); font-weight: 700; letter-spacing: -0.02em;
+}
+.doc h2 {
+  margin: var(--s6) 0 var(--s2);
+  font: 600 var(--t14)/1.4 var(--mono); color: var(--muted);
+}
+.doc p { color: var(--muted); }
+.doc strong { color: var(--text); font-weight: 600; }
+.doc ul { padding-left: 1.25rem; }
+.doc li { margin: var(--s2) 0; color: var(--muted); }
+.doc code {
+  font: var(--t14)/1.4 var(--mono); color: var(--text);
+  background: color-mix(in srgb, var(--text) 7%, transparent);
+  padding: 1px 5px; border-radius: var(--r-sm);
+}
+.doc a { color: var(--text); text-decoration-color: var(--line); text-underline-offset: 3px; }
+.doc a:hover { text-decoration-color: currentColor; }
+.doc footer {
+  margin-top: var(--s6); padding-top: var(--s4);
+  border-top: 1px solid var(--line);
+  color: var(--muted); font: var(--t12)/1.6 var(--mono);
+}
+
+@media (max-width: 560px) {
+  .doc { padding: 0 var(--s4) var(--s48); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * { transition-duration: 0.01ms !important; }
 }
